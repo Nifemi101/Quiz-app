@@ -29,9 +29,26 @@ const quizInit = function () {
     },
 
     {
-      questions: "Who discoverd gravity?",
-      options: ["Aristotle", "Isaac Newton", "Pythagoras", "Albert Einstine"],
-      answer: "Isaac Newton",
+      questions: "Which year did world war II end?",
+      options: ["1945", "1946", "1947", "1948"],
+      answer: "1945",
+    },
+
+    {
+      questions: "Who is the author of harry potter?",
+      options: [
+        "J.R.R. Tolkien",
+        "J.K. Rowling",
+        "George Orwell",
+        "Agatha Christie",
+      ],
+      answer: "J.K. Rowling",
+    },
+
+    {
+      questions: "Which country won the last world cup?",
+      options: ["Brazil", "France", "Argentina", "Nigeria"],
+      answer: "Argentina",
     },
   ];
 };
