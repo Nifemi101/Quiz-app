@@ -80,4 +80,45 @@ const initQuiz = function () {
       answer: "Page not found",
     },
   ];
+
+  let currentindex = 0;
+  let score = 0;
+  let timeleft = 30;
+  let timer;
+
+  const startButton = document.getElementById("start-js");
+  const startBox = document.getElementById("start-div");
+  const questionBox = document.getElementById("question-box");
+  const resultBox = document.getElementById("result-js");
+  const questionText = document.getElementById("questions-js");
+  const optionsBox = document.getElementById("options-js");
+  const timerText = document.getElementById("seconds");
+  const scoreText = document.getElementById("score-js");
+  const restartButton = document.getElementById("restart-js");
+
+  startButton.addEventListener("click", () => {
+    startBox.classList.add("hide");
+    questionBox.classList.remove("hide");
+    showQuestion();
+    startTimer();
+  });
+
+  function showQuestion() {
+    let currentQuestion = questions[currentindex];
+    questionText.innerText = currentQuestion.questions;
+
+    optionsBox.innerHTML = "";
+
+    currentQuestion.options.forEach((option) => {
+      const optionButton = document.createElement("button");
+      optionButton.innerText = option;
+      optionButton.classList.add("button");
+      optionButton.addEventListener("click", () => {
+        cheackAnswers(option);
+      })
+      optionsBox.appendChild(optionButton);
+    });
+  }
 };
+
+initQuiz();

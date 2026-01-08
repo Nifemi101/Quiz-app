@@ -10,18 +10,18 @@
   <body>
     <div class="quiz-app" id="welcome-js">
       <section class="first-section">
-        <div class="start-quiz">
+        <div class="start-quiz" id="start-div">
           <h2 class="welcome">START QUIZ</h2>
-          <button class="start">START</button>
+          <button id="start-js">START</button>
         </div>
       </section>
 
-      <section class="question-box">
-        <div class="hide">
+      <section>
+        <div class="hide" id="question-box">
           <div class="timer" id="timer-js">
             Time: <span id="seconds">30</span>s
           </div>
-          <h2 class="question" id="questions.js"></h2>
+          <h2 class="question" id="questions-js"></h2>
           <div class="answers" id="answers-js"></div>
         </div>
       </section>
@@ -30,7 +30,7 @@
         <div id="result-js" class="result-box hide">
           <h2 class="end-message">All Done</h2>
           <p class="score-board">Your score is <span id="score-js">0</span></p>
-          <button class="playagain" id="restart-js">RESTART</button>
+          <button id="restart-js">RESTART</button>
         </div>
       </section>
     </div>
