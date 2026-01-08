@@ -1,4 +1,4 @@
-const quizInit = function () {
+const initQuiz = function () {
   const questions = [
     {
       questions: "Who founded Facebook?",
@@ -22,6 +22,7 @@ const quizInit = function () {
       ],
       answer: "Robinson Honour",
     },
+
     {
       questions: "What is the capital city of Canada?",
       options: ["Vancouver", "Calgary", "Ottawa", "Toronto"],
@@ -49,6 +50,34 @@ const quizInit = function () {
       questions: "Which country won the last world cup?",
       options: ["Brazil", "France", "Argentina", "Nigeria"],
       answer: "Argentina",
+    },
+
+    {
+      questions: "What is spiderMan real name?",
+      options: ["Peter Parker", "Tony Stark", "Burce Wayne", "Steve Rogers"],
+      answer: "Peter Parker",
+    },
+
+    {
+      questions: "What is the full meaning of HTTP?",
+      options: [
+        "High Tech Transfer Protocol",
+        "Hyper Text Transmission Protocol",
+        "Hyper Text Transfer Protocol",
+        "High Tech Transmission Protocol",
+      ],
+      answer: "Hyper Text Transfer Protocol",
+    },
+
+    {
+      questions: "What is does erorr 404 mean?",
+      options: [
+        "Server error",
+        "Connection timeout",
+        "Page not found",
+        "Access denied",
+      ],
+      answer: "Page not found",
     },
   ];
 };
