@@ -83,13 +83,14 @@ const initQuiz = function () {
 
   let currentindex = 0;
   let score = 0;
-  let timeleft = 30;
+  let timeleft = 60;
   let timer;
 
   const startButton = document.getElementById("start-js");
   const startBox = document.getElementById("start-div");
   const questionBox = document.getElementById("question-box");
   const resultBox = document.getElementById("result-js");
+  const answerOption = document.getElementById("answers-js");
   const questionText = document.getElementById("questions-js");
   const optionsBox = document.getElementById("options-js");
   const timerText = document.getElementById("seconds");
@@ -107,17 +108,52 @@ const initQuiz = function () {
     let currentQuestion = questions[currentindex];
     questionText.innerText = currentQuestion.questions;
 
-    optionsBox.innerHTML = "";
+    answerOption.innerHTML = "";
 
     currentQuestion.options.forEach((option) => {
       const optionButton = document.createElement("button");
       optionButton.innerText = option;
-      optionButton.classList.add("button");
+      optionButton.classList.add("opt-button");
       optionButton.addEventListener("click", () => {
         cheackAnswers(option);
-      })
-      optionsBox.appendChild(optionButton);
+      });
+      answerOption.appendChild(optionButton);
     });
+  }
+
+  function cheackAnswers(selected) {
+    let current = questions[currentindex];
+
+    if (selected === current.answer) {
+      score++;
+    }
+
+    currentindex++;
+
+    if (currentindex < questions.length) {
+      showQuestion();
+    } else {
+      endQuiz();
+    }
+  }
+
+  function startTimer() {
+    timer = setInterval(() => {
+      timeleft--;
+      timerText.innerText = timeleft;
+
+      if (timeleft <= 0) {
+        endQuiz();
+      }
+    }, 1000);
+  }
+
+  function endQuiz() {
+    clearInterval(timer);
+    questionBox.classList.add("hide");
+
+    resultBox.classList.remove("hide");
+    scoreText.innerText = score;
   }
 };
 
