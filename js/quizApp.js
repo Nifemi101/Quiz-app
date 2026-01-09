@@ -79,6 +79,36 @@ const initQuiz = function () {
       ],
       answer: "Page not found",
     },
+
+    {
+      questions: "what is the output of 'typeOf null' in JavaScript?",
+      options: ["null", "undefined", "object", "number"],
+      answer: "object",
+    },
+
+    {
+      questions: "Which of these is not a primitive data type?",
+      options: ["String", "Boolean", "Array", "Symbols"],
+      answer: "Array",
+    },
+
+    {
+      questions: "What is the output of '5' + 2?",
+      options: ["52", "NaN", "7", "Error"],
+      answer: "52",
+    },
+
+    {
+      questions: "Which keyword does not allow reassigning of variable?",
+      options: ["Var", "Let", "Static", "Const"],
+      answer: "Const",
+    },
+
+    {
+      questions: "What is the result of 0.1 + 0.3 === 0.4?",
+      options: ["true", "undefined", "false", "null"],
+      answer: "false",
+    },
   ];
 
   let currentindex = 0;
@@ -96,7 +126,8 @@ const initQuiz = function () {
   const timerText = document.getElementById("seconds");
   const scoreText = document.getElementById("score-js");
   const restartButton = document.getElementById("restart-js");
-
+  const countDown = document.getElementById("countnum");
+  
   startButton.addEventListener("click", () => {
     startBox.classList.add("hide");
     questionBox.classList.remove("hide");
@@ -107,8 +138,10 @@ const initQuiz = function () {
   function showQuestion() {
     let currentQuestion = questions[currentindex];
     questionText.innerText = currentQuestion.questions;
-
     answerOption.innerHTML = "";
+
+    countDown.innerText = questions.length - currentindex;
+
 
     currentQuestion.options.forEach((option) => {
       const optionButton = document.createElement("button");
@@ -155,6 +188,9 @@ const initQuiz = function () {
     resultBox.classList.remove("hide");
     scoreText.innerText = score;
   }
+  restartButton.addEventListener("click", () => {
+    location.reload();
+  });
 };
 
 initQuiz();

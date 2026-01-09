@@ -40,9 +40,14 @@ body {
 }
 
 .opt-button{
+  border: 1px solid;
   display: block;
-  padding: 5px;
+  padding: 5px 7px ;
   margin: 5px auto;
+  border-radius: 10px;
+  width: 250px;
+  height: 50px;
+  font-size: 1.1rem;
 }
 
 .end-message {
@@ -70,6 +75,14 @@ body {
   color: #d63031;
   margin-bottom: 15px;
   font-size: 1.2rem;
+}
+
+.questionleft{
+  display: inline-block;
+  font-weight: bold;
+}
+.num{
+  font-size: 18px;
 }
 
 @media (max-width: 450px) {
