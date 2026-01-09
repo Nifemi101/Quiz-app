@@ -39,6 +39,12 @@ body {
   color: white;
 }
 
+.opt-button{
+  display: block;
+  padding: 5px;
+  margin: 5px auto;
+}
+
 .end-message {
   font-weight: bolder;
   font-size: 50px;
