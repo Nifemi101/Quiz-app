@@ -122,7 +122,6 @@ const initQuiz = function () {
   const resultBox = document.getElementById("result-js");
   const answerOption = document.getElementById("answers-js");
   const questionText = document.getElementById("questions-js");
-  const optionsBox = document.getElementById("options-js");
   const timerText = document.getElementById("seconds");
   const scoreText = document.getElementById("score-js");
   const restartButton = document.getElementById("restart-js");
